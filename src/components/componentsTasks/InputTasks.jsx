@@ -2,27 +2,21 @@ import "./InputTasks.scss";
 import Button from '../Button'
 import { useState } from "react";
 
-const InputTasks = ({btn_event, handleSubmit, dataTasks  }) => {
-  const [task, setTask] = useState(dataTasks || { })
+const InputTasks = ({setItems}) => {
+  const [task, setTask] = useState({ })
 
-   const submit = (e) => {
-     e.preventDefault()
-     console.log(task)
-   /handleSubmit(task)
-   }
-
-  
+   
     const handleChange = (e) => {
     setTask({ title: e.target.value });
     // console.log(task);
   };
 
-  //  const submit = (e) => {
-  //   e.preventDefault();
-  //    setItems((prev) => {
-  //    return [...prev, task];
-  //   });
-  // };
+    const submit = (e) => {
+     e.preventDefault();
+      setItems((prev) => {
+      return [...prev, task];
+     });
+   };
 
   return (
     <div >
@@ -34,7 +28,7 @@ const InputTasks = ({btn_event, handleSubmit, dataTasks  }) => {
           placeholder="Nova tarefa..."
           onChange={handleChange}
         />
-        <Button  text= '+' styles= 'btn_form' />      
+        <Button  submit={submit} text= '+' styles= 'btn_form' />      
       </form>
     </div>
   );

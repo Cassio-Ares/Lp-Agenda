@@ -1,7 +1,7 @@
 import "./TableTasks.scss";
 import { FaTrash, FaPen } from "react-icons/fa6";
 
-const TableTasks = ({text}) => {
+const TableTasks = ({items = [] }) => {
   return (
     <div className="table">
       <table>
@@ -13,18 +13,20 @@ const TableTasks = ({text}) => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
-              <p>{text}</p>
-            </td>
-            <td>
+        {items.map((item, index) => {
+          return (
+            <tr key={index}>
+              <td className="table_pg">{item.title}</td>
+              <td>
               <input type="checkbox" />
             </td>
             <td className="icons">
-              <FaPen />
-              <FaTrash />
-            </td>
-          </tr>
+                <FaPen />
+                <FaTrash />
+              </td>
+            </tr>
+          );
+        })}
         </tbody>
       </table>
     </div>
