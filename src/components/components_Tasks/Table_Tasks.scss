@@ -1,0 +1,36 @@
+@use '../../Sass/variables' as *;
+
+.table{
+   display: flex;
+   width: auto;
+   margin: 0 auto;
+   margin-top: 2em;
+   justify-content: center;
+ 
+
+   th{
+    padding: 4em;
+    padding-bottom: 1em;
+    border-bottom: 5px solid #D9D9D9;
+   }
+    
+   input{
+      display: flex;
+      margin: 0 auto;
+   }
+
+   td.icons{
+      padding-left: 7em;
+     }
+   
+   
+      svg{
+         width: 2em;
+         height: 1em;
+      }
+   
+   p::first-letter{
+      text-transform: uppercase;
+
+   }
+}

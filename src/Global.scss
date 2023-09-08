@@ -1,0 +1,25 @@
+@use "./Sass/variables" as *;
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: $letter-color;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-top: 1em;
+  margin-left: 2em;
+  
+}
+
+h2 {
+  font-size: 2.1em;
+  
+}
+
+p {
+  font-size: 1.5em;
+  
+}

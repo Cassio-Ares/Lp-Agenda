@@ -1,0 +1,22 @@
+@use "../../Sass/variables" as *;
+
+.form {
+  display: flex;
+  margin: 0.5em 0;
+  padding: 0 22.5em;
+
+  input {
+    background: $main-background;
+    border: none;
+    display: flex;
+    
+    width: 50em;
+  }
+
+  .btn_form {
+    background: $main-background;
+    border: none;
+    width: 4em;
+    height: 2em;
+  }
+}
