@@ -1,0 +1,61 @@
+@use '../../Sass/variables' as *;
+
+.card {
+    
+  .container_card {
+    background-color: $card-background;
+    width: 40em;
+    height: 20em;
+    border-radius: 0.6em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 3em;
+    position: absolute;
+    margin-left: 20em;
+    }
+
+  h1{
+    color:black;
+    padding-bottom: 1em;
+  }
+
+  p{
+    color:black;
+    padding-left: 3em;
+    padding-bottom: 2em;
+
+  }
+
+  .container-btn {
+    display: flex;
+    padding-left: 3em;
+  }
+
+  .btnCard_sim {
+    background-color: $btn-yes-background;
+    width: 13em;
+    height: 3em;
+    border-radius: 0.6em;
+    border: 1px solid #000;
+    margin-left: 3em;
+    color: #000;
+    font-weight: bold;
+  }
+
+  .btnCard_nao {
+    background-color:$btn-no-background;
+    width: 13em;
+    height: 3em;
+    border-radius: 0.6em;
+    margin-left: 3em;
+    font-weight: bold;
+    border: none;
+  }
+
+  .btnCard_sim:hover,
+  .btnCard_nao:hover{
+    box-shadow: 05px 05px #000;
+  }
+
+}
