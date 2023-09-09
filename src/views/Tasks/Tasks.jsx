@@ -12,23 +12,23 @@ const Tasks = ({ }) => {
   //Father
   const [items, setItems] = useState([...db.ex]); 
 
- 
-  // useEffect//????
-  // function show() {
-  //   fetch("http://localhost:3000/tasks", {
-  //     method: "GET",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   })
-  //     .then((resp) => resp.json)
-  //     .then((data) => {
-  //       console.log(dados);
-  //     })
-  //     .catch((err) => console.log(err));
-  // }
+ // função para mandar dados para db.json
+  function create() {
+    items = [];
 
-  //delete
+    fetch("http://localhost:3000/tasks", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(setItems),
+    })
+      .then((resp) => resp.json)
+      .then((data) => {
+        console.log(setItems);
+      })
+      .catch((err) => console.log(err));
+  }
 
   function removeTask(){
 
@@ -45,8 +45,8 @@ const Tasks = ({ }) => {
       <Header />
       <Container styles="main_container">
        <h1>Otimize seu tempo e se organize com o nosso Planejador Diário.</h1>
-        <TableTasks items={items} />
-        <InputTasks  setItems={setItems}/>
+        <TableTasks items={items}  />
+        <InputTasks  setItems={setItems}  create={create}/>
       </Container>
     </div>
   );

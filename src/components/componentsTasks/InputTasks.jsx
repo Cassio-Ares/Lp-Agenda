@@ -2,7 +2,7 @@ import "./InputTasks.scss";
 import Button from '../Button'
 import { useState } from "react";
 
-const InputTasks = ({setItems}) => {
+const InputTasks = ({setItems, create}) => {
   const [task, setTask] = useState({ })
 
    
@@ -13,6 +13,7 @@ const InputTasks = ({setItems}) => {
 
     const submit = (e) => {
      e.preventDefault();
+      setItems(create)// props trazendo função do pai
       setItems((prev) => {
       return [...prev, task];
      });
@@ -28,7 +29,7 @@ const InputTasks = ({setItems}) => {
           placeholder="Nova tarefa..."
           onChange={handleChange}
         />
-        <Button  submit={submit} text= '+' styles= 'btn_form' />      
+        <Button text= '+' styles= 'btn_form' />      
       </form>
     </div>
   );

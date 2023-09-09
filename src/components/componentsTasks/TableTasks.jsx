@@ -1,6 +1,7 @@
 import "./TableTasks.scss";
-import CardDel from '../Cards/CardDel'
 import { FaTrash, FaPen } from "react-icons/fa6";
+import CardAdd from "../Cards/CardAdd";
+import CardDel from '../Cards/CardDel'
 import { useState } from "react";
 
 const TableTasks = ({items = []}) => {
@@ -8,11 +9,12 @@ const TableTasks = ({items = []}) => {
     const [edit, setEdit] = useState (false)
 
     function delet(){
-      setDel(true)
+      setDel(!del)
     }
 
+    
     function edite(){
-      setEdit(true)
+      setEdit(!edit)
     }
 
     
@@ -36,8 +38,14 @@ const TableTasks = ({items = []}) => {
               <input type="checkbox" />
             </td>
             <td className="icons">
-                <FaPen   />
+                <FaPen onClick={edite}  />
+                {edit === true &&(
+                  <CardAdd onclickNo={edite}/>
+                )}
                 <FaTrash onClick={delet} />
+                {del === true &&(
+                  <CardDel onclickNo={delet} />
+                )}
               </td>
             </tr>
           );
