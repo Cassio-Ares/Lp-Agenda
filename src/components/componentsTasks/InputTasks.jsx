@@ -13,10 +13,11 @@ const InputTasks = ({setItems, create}) => {
 
     const submit = (e) => {
      e.preventDefault();
-      setItems(create)// props trazendo função do pai
       setItems((prev) => {
       return [...prev, task];
-     });
+      }) ;
+     
+    
    };
 
   return (

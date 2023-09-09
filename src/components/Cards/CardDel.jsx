@@ -9,8 +9,8 @@ const CardDel = ({onclickYes, onclickNo, styles}) => {
            <h1>Deseja excluir esse item?</h1>
            <p>Colocar as descrições das tarefas aqui.</p>
            <div className='container-btn'>
-            <Button text='Não' styles='btnCard_nao' event={onclickNo}  className={styles} />
-            <Button text='Sim' styles='btnCard_sim' event={onclickYes}  className={styles}   />
+            <Button text='Não' styles='btnCard_nao' event={onclickNo}/>
+            <Button text='Sim' styles='btnCard_sim' event={onclickYes}/>
           </div>
       </Container>
     </div>

@@ -4,18 +4,24 @@ import CardAdd from "../Cards/CardAdd";
 import CardDel from '../Cards/CardDel'
 import { useState } from "react";
 
-const TableTasks = ({items = []}) => {
+const TableTasks = ({items = [], removeTask}) => {
     const [del, setDel]= useState(false)
     const [edit, setEdit] = useState (false)
 
+    // States para negar 
     function delet(){
       setDel(!del)
     }
 
-    
     function edite(){
       setEdit(!edit)
     }
+
+    //const para remover (new)
+     const deletYes = (e) =>{
+      e.preventDefault()
+      removeTask(items)
+     }
 
     
 
@@ -40,11 +46,11 @@ const TableTasks = ({items = []}) => {
             <td className="icons">
                 <FaPen onClick={edite}  />
                 {edit === true &&(
-                  <CardAdd onclickNo={edite}/>
+                  <CardAdd onclickNo={edite} />
                 )}
                 <FaTrash onClick={delet} />
                 {del === true &&(
-                  <CardDel onclickNo={delet} />
+                  <CardDel onclickNo={delet}  onclickYes={deletYes} />
                 )}
               </td>
             </tr>
